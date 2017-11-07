@@ -13,6 +13,12 @@
     state: started
     enabled: true
 
+- name: Open HTTP port 
+  firewalld:
+    service: https
+    permanent: true
+    state: enabled
+
 - name: Copy web site
   copy:
     content: "Demo Ansible"
