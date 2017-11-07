@@ -1,0 +1,24 @@
+---
+# tasks file for apache
+#
+- name: Install http
+  yum:
+    name: httpd
+    state: installed
+
+
+- name: Start httpd
+  service:
+    name: httpd
+    state: started
+    enbled: true
+
+- name: Copy web site
+  copy:
+    content: "Demo Ansible"
+    dest: /var/www/html/index.html
+    owner: apache
+    group: apache
+
+
+
