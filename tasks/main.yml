@@ -15,9 +15,10 @@
 
 - name: Open HTTP port 
   firewalld:
-    service: https
+    service: http
     permanent: true
     state: enabled
+
 
 - name: Copy web site
   copy:
